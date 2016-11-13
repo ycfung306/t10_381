@@ -52,8 +52,8 @@ function task2(req, res){
     db.collection('cafes').findOne({"id" : req.query.id}, function(err, doc){
       assert.equal(err, null); 
       if (doc != null) {
-        //res.render("cafedetail.ejs", doc);
-        res.render("gmap.ejs",{lat:doc.coord[0],lon:doc.coord[1],zoom:18});
+        res.render("cafedetail.ejs", doc);
+        //res.render("gmap.ejs",{lat:doc.coord[0],lon:doc.coord[1],zoom:18});
         res.end();
       }
       db.close();
